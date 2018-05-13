@@ -4,4 +4,15 @@ Mit dem kleinen Linkpool Projekt sind wir jetzt in der Lage via Hugo unterschied
 
 Leider kann Github.io nur Jekyll generieren. Da wir aber Hugo als Static Page Generator im Einsatz haben, müssen wir den Build Prozess auslagern. Und schon sind wir mitten im Thema Continuous Integration.
 
-Bei der konkreten Challenge geht es darum, einen Prozess zu implementieren, in dem via [Travis-CI](https://travis-ci.org/) automatisiert ein Build vollzogen (und später auch mal getestet) wird und dann die ausgespielten Inhalte auf der zugehörigen GitHub.io Seite zugänglich gemacht werden. Alles klar?
+Bei der konkreten Challenge geht es darum, einen Prozess zu implementieren, in dem via [Travis-CI](https://travis-ci.org/) automatisiert ein Build vollzogen (und später auch mal getestet) wird und dann die ausgespielten Inhalte auf der zugehörigen GitHub.io Seite zugänglich gemacht werden.
+
+Mal in Pseudocode gesprochen:
+
+onPush@github.com/repo
+  create Environment
+  hugo --destination docs
+  git add .
+  git commit -m "created content build {Buildnumber}"
+  git push origin master
+  
+Alles klar?
