@@ -8,11 +8,14 @@ Bei der konkreten Challenge geht es darum, einen Prozess zu implementieren, in d
 
 Mal in Pseudocode gesprochen:
 
+```
 onPush@github.com/repo
   create Environment
   hugo --destination docs
   git add .
   git commit -m "created content build {Buildnumber}"
   git push origin master
-  
+
+```
+
 Alles klar?
